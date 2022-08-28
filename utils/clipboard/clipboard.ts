@@ -87,6 +87,7 @@ export const copyToClipboard = (
   if (!options.isAlteringClipboard) {
     event.preventDefault();
   }
+
   const formattedData: IClipboardFormattedData = {
     html: options.types?.includes("html") ? inputDataToHTML(data) : undefined,
     markdown: options.types?.includes("markdown")

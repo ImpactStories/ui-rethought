@@ -8,7 +8,7 @@ export interface ICopyToClipboardOptions {
 }
 
 export type TClipboardInputNodeType =
-  | "default"
+  | "span"
   | "bold"
   | "underline"
   | "italic";
@@ -25,7 +25,8 @@ export type TClipboardInputBlockType =
 
 export interface IClipboardInputNode {
   type: TClipboardInputNodeType[];
-  children: IClipboardInputNode[];
+  children?: IClipboardInputNode[];
+  text?: string;
 }
 
 export interface IClipboardInputBlock {
