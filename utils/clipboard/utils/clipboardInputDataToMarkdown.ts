@@ -9,22 +9,22 @@ import {
 const inlineDictionary: {
   [key in TClipboardInputNodeType]: string;
 } = {
-  span: "span",
-  bold: "b",
-  underline: "u",
-  italic: "i",
+  span: "",
+  bold: "**",
+  underline: "_",
+  italic: "*",
 };
 
 const blockDictionary: {
   [key in TClipboardInputBlockType]: string;
 } = {
-  block: "div",
-  h1: "h1",
-  h2: "h2",
-  h3: "h3",
-  h4: "h4",
-  uli: "li",
-  oli: "li",
+  block: "",
+  h1: "#",
+  h2: "##",
+  h3: "###",
+  h4: "####",
+  uli: "-",
+  oli: "-",
   img: "img",
 };
 
@@ -32,12 +32,12 @@ const buildInlineElement = (inlineData: IClipboardInputNode[]): string => {
   const data = inlineData
     .map((inlineDataChild) => {
       const tags = inlineDataChild.type.map((currentType) => {
-        const htmlTag = inlineDictionary[currentType];
+        const markdownSign = inlineDictionary[currentType];
         // bulid inline elements as long as there are children
         const innerContent = inlineDataChild.children
           ? buildInlineElement(inlineDataChild.children)
           : inlineDataChild.text;
-        const element = `<${htmlTag}>${innerContent}</${htmlTag}>`;
+        const element = `${markdownSign}${innerContent}${markdownSign}`;
         return element;
       });
       return tags.join("");
@@ -46,25 +46,25 @@ const buildInlineElement = (inlineData: IClipboardInputNode[]): string => {
   return data;
 };
 
-const buildHTMLElement = (dataItem: IClipboardInputBlock): string => {
-  const htmlTag = blockDictionary[dataItem.type];
-  const element = `<${htmlTag}>${buildInlineElement(
-    dataItem.children
-  )}</${htmlTag}>`;
+const buildMarkdownElement = (dataItem: IClipboardInputBlock): string => {
+  const markdownTag = blockDictionary[dataItem.type];
+  const element = `${markdownTag} ${buildInlineElement(dataItem.children)}`;
   return element;
 };
 
 const generateBlocks = (data: IClipboardInputData): string => {
-  const blocksHTML = data
+  const blocksMarkdown = data
     .map((dataItem) => {
-      const element = buildHTMLElement(dataItem);
+      const element = buildMarkdownElement(dataItem);
       return element;
     })
     .join("");
-  return blocksHTML;
+  return blocksMarkdown;
 };
 
-export const clipboardInputDataToHTML = (data: IClipboardInputData): string => {
+export const clipboardInputDataToMarkdown = (
+  data: IClipboardInputData
+): string => {
   const blocks = generateBlocks(data);
   return blocks;
 };

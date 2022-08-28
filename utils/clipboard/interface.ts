@@ -7,11 +7,7 @@ export interface ICopyToClipboardOptions {
   types?: TClipboardFormattedDataType[];
 }
 
-export type TClipboardInputNodeType =
-  | "span"
-  | "bold"
-  | "underline"
-  | "italic";
+export type TClipboardInputNodeType = "span" | "bold" | "underline" | "italic";
 
 export type TClipboardInputBlockType =
   | "block"
