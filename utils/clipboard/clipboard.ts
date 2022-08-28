@@ -82,13 +82,19 @@ const alterExistingClipboard = (
 // normalizes copy paste for the most famous editors
 export const copyToClipboard = (
   data: IClipboardInputData,
-  event: ClipboardEvent,
-  options: ICopyToClipboardOptions
+  options: ICopyToClipboardOptions,
+  event?: ClipboardEvent
 ) => {
   // If clipboard is not altered, prevent the original to clipboard copy
   if (!options.isAlteringClipboard) {
-    event.preventDefault();
+    event?.preventDefault();
   }
+
+  if (!options.types) {
+    options.types = ["html", "markdown", "plain"];
+  }
+
+  console.log("formatted", data);
 
   const formattedData: IClipboardFormattedData = {
     html: options.types?.includes("html") ? inputDataToHTML(data) : undefined,
@@ -103,9 +109,18 @@ export const copyToClipboard = (
       : undefined,
   };
 
+  console.log("formatted", formattedData);
+
   if (!options.isAlteringClipboard) {
     createNewClipboard(formattedData, options);
   } else {
-    alterExistingClipboard(formattedData, event, options);
+    if (event) {
+      alterExistingClipboard(formattedData, event, options);
+    } else {
+      console.info(
+        "Clipboard:",
+        "The onCopy event must be passed to alter a given clipboard."
+      );
+    }
   }
 };
