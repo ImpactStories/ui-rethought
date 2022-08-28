@@ -1,6 +1,9 @@
 export interface ICopyToClipboardOptions {
   // Keep the current clipboard and only alter passed types
   isAlteringClipboard?: boolean;
+  // Types which should be copied to clipboard
+  // For altering this means that all types which are not set here
+  // will be kept
   types?: TClipboardFormattedDataType[];
 }
 

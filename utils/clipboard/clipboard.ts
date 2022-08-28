@@ -21,10 +21,9 @@ const inputDataToSlateFragments = (data: IClipboardInputData): any => {
   return {};
 };
 
-const createNewClipboard = (
-  formattedData: IClipboardFormattedData,
-  options: ICopyToClipboardOptions
-) => {
+// Create blobs of the formatted data
+// And create the object to pass to the clipboard
+const buildClipboardData = (formattedData: IClipboardFormattedData) => {
   const blobHtml = formattedData.html
     ? new Blob([formattedData.html], {
         type: CLIPBOARD_TYPE_HTML,
@@ -50,7 +49,18 @@ const createNewClipboard = (
       });
     }, {});
 
+  return clipboardDataFiltered;
+};
+
+const createNewClipboard = (
+  formattedData: IClipboardFormattedData,
+  options: ICopyToClipboardOptions
+) => {
+  const clipboardDataFiltered = buildClipboardData(formattedData);
+  // Create a new clipboard
+  // Data must be an object, with the different types as key and blob as value
   const clipboardItemInput = new ClipboardItem(clipboardDataFiltered);
+  // Write the new data to clipboard
   (navigator.clipboard as unknown as Clipboard).write([clipboardItemInput]);
 };
 
