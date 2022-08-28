@@ -4,13 +4,15 @@ import {
   IClipboardInputData,
   ICopyToClipboardOptions,
 } from "./interface";
+import { clipboardInputDataToHTML } from "./utils/clipboardInputDataToHtml";
+import { clipboardInputDataToPlain } from "./utils/clipboardInputDataToPlain";
 
 const inputDataToHTML = (data: IClipboardInputData): string => {
-  return "";
+  return clipboardInputDataToHTML(data);
 };
 
 const inputDataToMarkdown = (data: IClipboardInputData): string => {
-  return "";
+  return clipboardInputDataToPlain(data);
 };
 
 const inputDataToPlain = (data: IClipboardInputData): string => {
