@@ -11,7 +11,6 @@ const ClipboardEmptyComponent: React.FC = () => {
           const clipboardContent = copyToClipboard(CLIPBOARD_INPUT_DATA, {
             isAlteringClipboard: false,
           });
-          console.log(clipboardContent);
         }}
       >
         Click to copy to clipboard

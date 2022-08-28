@@ -3,7 +3,17 @@ import {
   IClipboardInputData,
   IClipboardInputNode,
   TClipboardInputBlockType,
+  TClipboardInputNodeType,
 } from "../interface";
+
+const inlineDictionary: {
+  [key in TClipboardInputNodeType]: string;
+} = {
+  span: "span",
+  bold: "b",
+  underline: "u",
+  italic: "i",
+};
 
 const blockDictionary: {
   [key in TClipboardInputBlockType]: string;
@@ -18,9 +28,28 @@ const blockDictionary: {
   img: "img",
 };
 
+const buildInlineElement = (inlineData: IClipboardInputNode[]): string => {
+  const data = inlineData
+    .map((inlineDataChild) => {
+      const tags = inlineDataChild.type.map((currentType) => {
+        const htmlTag = inlineDictionary[currentType];
+        const innerContent = inlineDataChild.children
+          ? buildInlineElement(inlineDataChild.children)
+          : inlineDataChild.text;
+        const element = `<${htmlTag}>${innerContent}</${htmlTag}>`;
+        return element;
+      });
+      return tags.join("");
+    })
+    .join("");
+  return data;
+};
+
 const buildHTMLElement = (dataItem: IClipboardInputBlock): string => {
   const htmlTag = blockDictionary[dataItem.type];
-  const element = `<${htmlTag}>${dataItem.children}</${htmlTag}>`;
+  const element = `<${htmlTag}>${buildInlineElement(
+    dataItem.children
+  )}</${htmlTag}>`;
   return element;
 };
 
