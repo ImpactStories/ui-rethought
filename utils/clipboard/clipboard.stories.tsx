@@ -3,13 +3,16 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { copyToClipboard } from "./clipboard";
 import { CLIPBOARD_INPUT_DATA } from "./mock";
 
-const ClipboardEmptyComponent: React.FC = () => {
+const ClipboardEmptyComponent: React.FC<any> = ({
+  isCopyingPlainAsMarkdown
+}) => {
   return (
     <div>
       <div
         onClick={() => {
           const clipboardContent = copyToClipboard(CLIPBOARD_INPUT_DATA, {
             isAlteringClipboard: false,
+            isCopyingPlainAsMarkdown: isCopyingPlainAsMarkdown
           });
         }}
       >
@@ -30,4 +33,6 @@ const Template: ComponentStory<typeof ClipboardEmptyComponent> = (args) => (
 );
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+  isCopyingPlainAsMarkdown: true,
+};

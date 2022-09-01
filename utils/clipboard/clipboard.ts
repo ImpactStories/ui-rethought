@@ -6,22 +6,7 @@ import {
 } from "./interface";
 import { clipboardInputDataToHTML } from "./utils/clipboardInputDataToHtml";
 import { clipboardInputDataToMarkdown } from "./utils/clipboardInputDataToMarkdown";
-
-const inputDataToHTML = (data: IClipboardInputData): string => {
-  return clipboardInputDataToHTML(data);
-};
-
-const inputDataToMarkdown = (data: IClipboardInputData): string => {
-  return clipboardInputDataToMarkdown(data);
-};
-
-const inputDataToPlain = (data: IClipboardInputData): string => {
-  return "";
-};
-
-const inputDataToSlateFragments = (data: IClipboardInputData): any => {
-  return {};
-};
+import { clipboardInputDataToPlain } from "./utils/clipboardInputDataToPlain";
 
 // Create blobs of the formatted data
 // And create the object to pass to the clipboard
@@ -85,7 +70,7 @@ export const copyToClipboard = (
   options: ICopyToClipboardOptions,
   event?: ClipboardEvent
 ) => {
-  // If clipboard is not altered, prevent the original to clipboard copy
+  // If clipboard is not altered, prevent the original to-clipboard-copy-functionality
   if (!options.isAlteringClipboard) {
     event?.preventDefault();
   }
@@ -94,22 +79,18 @@ export const copyToClipboard = (
     options.types = ["html", "markdown", "plain"];
   }
 
-  console.log("formatted", data);
+  const markdownContent = clipboardInputDataToMarkdown(data);
+  const plainContent = options.isCopyingPlainAsMarkdown
+    ? markdownContent
+    : clipboardInputDataToPlain(data);
 
   const formattedData: IClipboardFormattedData = {
-    html: options.types?.includes("html") ? inputDataToHTML(data) : undefined,
-    markdown: options.types?.includes("markdown")
-      ? inputDataToMarkdown(data)
+    html: options.types?.includes("html")
+      ? clipboardInputDataToHTML(data)
       : undefined,
-    plain: options.types?.includes("plain")
-      ? inputDataToPlain(data)
-      : undefined,
-    slate: options.types?.includes("slate")
-      ? inputDataToSlateFragments(data)
-      : undefined,
+    markdown: options.types?.includes("markdown") ? markdownContent : undefined,
+    plain: options.types?.includes("plain") ? plainContent : undefined,
   };
-
-  console.log("formatted", formattedData);
 
   if (!options.isAlteringClipboard) {
     createNewClipboard(formattedData, options);

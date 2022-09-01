@@ -5,6 +5,8 @@ export interface ICopyToClipboardOptions {
   // For altering this means that all types which are not set here
   // will be kept
   types?: TClipboardFormattedDataType[];
+  // When active, the type plain holds the markdown content
+  isCopyingPlainAsMarkdown?: boolean;
 }
 
 export type TClipboardInputNodeType = "span" | "bold" | "underline" | "italic";
@@ -35,12 +37,10 @@ export type IClipboardInputData = IClipboardInputBlock[];
 export type TClipboardFormattedDataType =
   | "html"
   | "plain"
-  | "markdown"
-  | "slate";
+  | "markdown";
 
 export interface IClipboardFormattedData {
   html: string | undefined;
   markdown: string | undefined;
   plain: string | undefined;
-  slate: any | undefined;
 }

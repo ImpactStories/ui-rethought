@@ -58,7 +58,7 @@ const generateBlocks = (data: IClipboardInputData): string => {
       const element = buildMarkdownElement(dataItem);
       return element;
     })
-    .join("");
+    .join("\n\n");
   return blocksMarkdown;
 };
 
