@@ -12,8 +12,14 @@ export default {
 } as ComponentMeta<typeof Container>;
 
 const Template: ComponentStory<typeof Container> = (args) => (
-  <Container {...args} />
+  <Container {...args}>
+    {
+      args.children
+    }
+  </Container>
 );
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+  children: <div>Whats Up</div>
+};

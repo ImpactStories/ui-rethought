@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-interface ISpacingStyleProps {
+export interface ISpacingStyleProps {
   readonly marginTop?: string;
   readonly marginRight?: string;
   readonly marginBottom?: string;
