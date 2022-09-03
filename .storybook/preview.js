@@ -1,3 +1,5 @@
+import { GlobalStyle } from "../styled-components/global";
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -6,4 +8,13 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
+};
+
+export const decorators = [
+  (Story) => (
+    <div>
+      <GlobalStyle />
+      <Story />
+    </div>
+  ),
+];
