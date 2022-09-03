@@ -1,8 +1,20 @@
 import { ISpacingStyleProps } from "../../styled-components/base";
 import { TypographyStyle } from "./typography.style";
 
+type TTypographyComponentTag =
+  | "h1"
+  | "h2"
+  | "h3"
+  | "h4"
+  | "h5"
+  | "h6"
+  | "p"
+  | "span"
+  | "div";
+
 interface ITypographyComponent extends ISpacingStyleProps {
   children: React.ReactNode;
+  tag?: TTypographyComponentTag;
 }
 
 export const Typography: React.FC<ITypographyComponent> = ({
@@ -15,6 +27,8 @@ export const Typography: React.FC<ITypographyComponent> = ({
   paddingRight,
   paddingBottom,
   paddingLeft,
+
+  tag = "p"
 }) => {
   return (
     <TypographyStyle
@@ -26,6 +40,8 @@ export const Typography: React.FC<ITypographyComponent> = ({
       paddingRight={paddingRight}
       paddingBottom={paddingBottom}
       paddingLeft={paddingLeft}
+
+      as={tag}
     >
       {children}
     </TypographyStyle>

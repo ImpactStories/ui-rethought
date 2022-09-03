@@ -21,5 +21,6 @@ const Template: ComponentStory<typeof Typography> = (args) => (
 export const Primary = Template.bind({});
 Primary.args = {
   children: <span>My first text</span>,
-  marginTop: "3x"
+  marginTop: "3x",
+  tag: "h2"
 };
