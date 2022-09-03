@@ -1,3 +1,3 @@
 export const Theme = {
-    gridMultiplier: 2,
+    gridBaseValue: 2,
 }

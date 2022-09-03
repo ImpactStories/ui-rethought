@@ -26,7 +26,7 @@ const getSpacingPixelValue = (
     return undefined;
   }
   if (valueIsGridMultiplier(value)) {
-    return `${getPixelFromGridMultiplier(value) * Theme.gridMultiplier}px`;
+    return `${getPixelFromGridMultiplier(value) * Theme.gridBaseValue}px`;
   } else return value;
 };
 
