@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Theme } from "../configuration/config";
 import { TGridMultiplier } from "./_interface";
-import { getPixelFromGridMultiplier } from "./_utils";
+import { getGridMultiplierAsNumber } from "./_utils";
 
 export interface ISpacingStyleProps {
   // margins
@@ -26,7 +26,7 @@ const getSpacingPixelValue = (
     return undefined;
   }
   if (valueIsGridMultiplier(value)) {
-    return `${getPixelFromGridMultiplier(value) * Theme.gridBaseValue}px`;
+    return `${getGridMultiplierAsNumber(value) * Theme.gridBaseValue}px`;
   } else return value;
 };
 
