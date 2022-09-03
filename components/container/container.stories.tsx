@@ -7,7 +7,6 @@ export default {
   title: "Base/Container",
   component: Container,
   argTypes: {
-    backgroundColor: { control: "color" },
   },
 } as ComponentMeta<typeof Container>;
 
