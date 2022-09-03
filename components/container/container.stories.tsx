@@ -21,5 +21,6 @@ const Template: ComponentStory<typeof Container> = (args) => (
 
 export const Primary = Template.bind({});
 Primary.args = {
-  children: <div>Whats Up</div>
+  children: <div>Whats Up</div>,
+  marginTop: "3x"
 };

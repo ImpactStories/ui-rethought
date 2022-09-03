@@ -11,6 +11,10 @@ export const Container: React.FC<IContainerComponent> = ({
   marginRight,
   marginBottom,
   marginLeft,
+  paddingTop,
+  paddingRight,
+  paddingBottom,
+  paddingLeft,
 }) => {
   return (
     <ContainerStyle
@@ -18,6 +22,10 @@ export const Container: React.FC<IContainerComponent> = ({
       marginRight={marginRight}
       marginBottom={marginBottom}
       marginLeft={marginLeft}
+      paddingTop={paddingTop}
+      paddingRight={paddingRight}
+      paddingBottom={paddingBottom}
+      paddingLeft={paddingLeft}
     >
       {children}
     </ContainerStyle>
