@@ -1,3 +1,4 @@
+import { TColor } from "../../configuration/config";
 import { ISpacingStyleProps } from "../../styled-components/base";
 import { TypographyStyle } from "./typography.style";
 
@@ -15,6 +16,7 @@ type TTypographyComponentTag =
 interface ITypographyComponent extends ISpacingStyleProps {
   children: React.ReactNode;
   tag?: TTypographyComponentTag;
+  color?: TColor;
 }
 
 export const Typography: React.FC<ITypographyComponent> = ({
@@ -28,7 +30,8 @@ export const Typography: React.FC<ITypographyComponent> = ({
   paddingBottom,
   paddingLeft,
 
-  tag = "p"
+  tag = "p",
+  color = "red-100"
 }) => {
   return (
     <TypographyStyle
