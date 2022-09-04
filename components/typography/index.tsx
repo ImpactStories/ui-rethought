@@ -44,6 +44,7 @@ export const Typography: React.FC<ITypographyComponent> = ({
       paddingRight={paddingRight}
       paddingBottom={paddingBottom}
       paddingLeft={paddingLeft}
+      color={color}
       as={tag}
     >
       {children}

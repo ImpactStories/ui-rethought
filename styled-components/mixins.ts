@@ -1,5 +1,5 @@
 import { css } from "styled-components";
-import { TDevice, Theme } from "../configuration/config";
+import { TColor, TDevice, Theme } from "../configuration/config";
 import { TGridMultiplier } from "./_interface";
 import { getGridMultiplierAsNumber } from "./_utils";
 
@@ -46,3 +46,7 @@ export const isMaxWidth = (media: TDevice) => {
   const maxWidth = Theme.deviceSizes[media];
   return `@media screen and (max-width: ${maxWidth})`;
 };
+
+export const getColor = (color: TColor): string => {
+  return Theme.colors[color];
+}
