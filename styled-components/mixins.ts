@@ -3,7 +3,7 @@ import { Theme } from "../configuration/config";
 import { TGridMultiplier } from "./_interface";
 import { getGridMultiplierAsNumber } from "./_utils";
 
-interface ISpacingMixinProps {
+export interface ISpacingMixinProps {
   // margins
   readonly marginTop?: TGridMultiplier | string;
   readonly marginRight?: TGridMultiplier | string;
