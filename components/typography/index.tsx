@@ -1,5 +1,6 @@
 import { TColor } from "../../configuration/config";
 import { ISpacingStyleProps } from "../../styled-components/base";
+import { ISpacingMixinProps } from "../../styled-components/mixins";
 import { TypographyStyle } from "./typography.style";
 
 type TTypographyComponentTag =
@@ -13,7 +14,7 @@ type TTypographyComponentTag =
   | "span"
   | "div";
 
-interface ITypographyComponent extends ISpacingStyleProps {
+interface ITypographyComponent extends ISpacingMixinProps {
   children: React.ReactNode;
   tag?: TTypographyComponentTag;
   color?: TColor;
