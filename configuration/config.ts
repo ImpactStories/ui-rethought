@@ -41,19 +41,18 @@ export const Theme = {
         },
       ],
     },
-  },
-
-  fontsAdditionals: {
-    "Noto Sans": [
-      {
-        style: "normal",
-        weight: 700,
-        src: "assets/fonts/noto/noto-sans-v27-latin-700.woff2",
-      },
-    ],
+    additionals: {
+      "Noto Sans": [
+        {
+          style: "normal",
+          weight: 700,
+          src: "assets/fonts/noto/noto-sans-v27-latin-700.woff2",
+        },
+      ],
+    }
   },
 };
 
-export type TFont = keyof typeof Theme.fontsAdditionals;
+export type TFont = keyof typeof Theme.fonts.additionals;
 export type TColor = keyof typeof Theme.colors;
 export type TDevice = keyof typeof Theme.deviceSizes;
