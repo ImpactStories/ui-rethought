@@ -1,5 +1,5 @@
 import { css } from "styled-components";
-import { Theme } from "../configuration/config";
+import { TDevice, Theme } from "../configuration/config";
 import { TGridMultiplier } from "./_interface";
 import { getGridMultiplierAsNumber } from "./_utils";
 
@@ -41,3 +41,8 @@ export const SpacingMixin = (props: ISpacingMixinProps) => css`
   padding-bottom: ${getSpacingPixelValue(props.paddingBottom)};
   padding-left: ${getSpacingPixelValue(props.paddingLeft)};
 `;
+
+export const isMaxWidth = (media: TDevice) => {
+  const maxWidth = Theme.deviceSizes[media];
+  return `@media screen and (max-width: ${maxWidth})`;
+};

@@ -7,11 +7,12 @@ export const Theme = {
     "red-100": "#FF0000",
   },
 
-  fonts: {
-    primary: {
-      path: "../abc.woff2",
-    },
-  },
+  deviceSizes: {
+    mobile: "450px",
+    tablet: "768px",
+    desktop: "1024px"
+  }
 };
 
 export type TColor = keyof typeof Theme.colors;
+export type TDevice = keyof typeof Theme.deviceSizes;
