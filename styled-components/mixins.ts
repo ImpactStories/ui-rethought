@@ -47,6 +47,12 @@ export const isMaxWidth = (media: TDevice) => {
   return `@media screen and (max-width: ${maxWidth})`;
 };
 
-export const getColor = (color: TColor): string => {
+export const isMinWidth = (media: TDevice) => {
+  const maxWidth = Theme.deviceSizes[media] + 1;
+  return `@media screen and (min-width: ${maxWidth})`;
+};
+
+// Get a hex color value with a given color id
+export const getColorHexValue = (color: TColor): string => {
   return Theme.colors[color];
 }

@@ -1,5 +1,6 @@
-import { TColor } from "../../configuration/config";
+import { TColor, TFont } from "../../configuration/config";
 import { ISpacingStyleProps } from "../../styled-components/base";
+import { buildFonts } from "../../styled-components/fonts";
 import { ISpacingMixinProps } from "../../styled-components/mixins";
 import { TypographyStyle } from "./typography.style";
 
@@ -18,6 +19,7 @@ interface ITypographyComponent extends ISpacingMixinProps {
   children: React.ReactNode;
   tag?: TTypographyComponentTag;
   color?: TColor;
+  fontFamily?: TFont;
 }
 
 export const Typography: React.FC<ITypographyComponent> = ({
@@ -33,6 +35,7 @@ export const Typography: React.FC<ITypographyComponent> = ({
 
   tag = "p",
   color = "red-100",
+  fontFamily = "Noto Sans"
 }) => {
   return (
     <TypographyStyle
@@ -45,6 +48,7 @@ export const Typography: React.FC<ITypographyComponent> = ({
       paddingBottom={paddingBottom}
       paddingLeft={paddingLeft}
       color={color}
+      fontFamily={fontFamily}
       as={tag}
     >
       {children}
