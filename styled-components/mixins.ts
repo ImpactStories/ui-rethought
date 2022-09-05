@@ -63,7 +63,7 @@ export const getColorHexValue = (color: TColor): string => {
   return Theme.colors[color];
 };
 
-// Get a hex color value with a given color id
+// Get the font family based on the chosen font type
 export const getFontFamily = (font: TFont): TFontFamily => {
   if (font === "primary") {
     return Object.keys(Theme.fonts.primary)[0] as any;
