@@ -1,5 +1,11 @@
 import { css } from "styled-components";
-import { TColor, TDevice, Theme } from "../configuration/config";
+import {
+  TColor,
+  TDevice,
+  TFont,
+  TFontFamily,
+  Theme,
+} from "../configuration/config";
 import { TGridMultiplier } from "./_interface";
 import { getGridMultiplierAsNumber } from "./_utils";
 
@@ -55,4 +61,15 @@ export const isMinWidth = (media: TDevice) => {
 // Get a hex color value with a given color id
 export const getColorHexValue = (color: TColor): string => {
   return Theme.colors[color];
-}
+};
+
+// Get a hex color value with a given color id
+export const getFontFamily = (font: TFont): TFontFamily => {
+  if (font === "primary") {
+    return Object.keys(Theme.fonts.primary)[0] as any;
+  } else if (font === "secondary") {
+    return Object.keys(Theme.fonts.secondary)[0] as any;
+  } else {
+    return font;
+  }
+};

@@ -19,7 +19,7 @@ interface ITypographyComponent extends ISpacingMixinProps {
   children: React.ReactNode;
   tag?: TTypographyComponentTag;
   color?: TColor;
-  fontFamily?: TFont;
+  font?: TFont;
 }
 
 export const Typography: React.FC<ITypographyComponent> = ({
@@ -35,7 +35,7 @@ export const Typography: React.FC<ITypographyComponent> = ({
 
   tag = "p",
   color = "red-100",
-  fontFamily = "Noto Sans"
+  font = "Noto Sans"
 }) => {
   return (
     <TypographyStyle
@@ -48,7 +48,7 @@ export const Typography: React.FC<ITypographyComponent> = ({
       paddingBottom={paddingBottom}
       paddingLeft={paddingLeft}
       color={color}
-      fontFamily={fontFamily}
+      font={font}
       as={tag}
     >
       {children}

@@ -85,6 +85,7 @@ export const Theme = {
   },
 };
 
-export type TFont = keyof typeof Theme.fonts.additionals;
+export type TFontFamily = keyof typeof Theme.fonts.additionals | keyof typeof Theme.fonts.primary | keyof typeof Theme.fonts.secondary;
+export type TFont = "primary" | "secondary" | keyof typeof Theme.fonts.additionals;
 export type TColor = keyof typeof Theme.colors;
 export type TDevice = keyof typeof Theme.deviceSizes;
