@@ -52,7 +52,7 @@ export const Theme = {
         {
           style: "normal",
           weight: 700,
-          src: "assets/fonts/noto/noto-sans-v27-latin-700.woff2",
+          src: "/fonts/noto/noto-sans-v27-latin-700.woff2",
         },
       ],
     },
@@ -61,7 +61,7 @@ export const Theme = {
         {
           style: "normal",
           weight: 700,
-          src: "assets/fonts/noto/noto-sans-v27-latin-700.woff2",
+          src: "/fonts/noto/noto-sans-v27-latin-700.woff2",
         },
       ],
     },
@@ -78,7 +78,7 @@ export const Theme = {
         {
           style: "normal",
           weight: 700,
-          src: "assets/fonts/noto/noto-sans-v27-latin-700.woff2",
+          src: "/fonts/noto/noto-sans-v27-latin-700.woff2",
         },
       ],
     },
