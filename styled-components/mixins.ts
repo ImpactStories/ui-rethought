@@ -4,6 +4,7 @@ import {
   TDevice,
   TFont,
   TFontFamily,
+  TFontSize,
   Theme,
 } from "../configuration/config";
 import { TGridMultiplier } from "./_interface";
@@ -73,3 +74,8 @@ export const getFontFamily = (font: TFont): TFontFamily => {
     return font;
   }
 };
+
+// Get the font size belonging to a font size variable
+export const getFontSizeInPixel = (fontSize: TFontSize): string => {
+  return Theme.fontSizes[fontSize];
+}

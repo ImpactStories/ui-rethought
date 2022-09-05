@@ -19,6 +19,33 @@ export const Theme = {
   gridBaseValue: 2,
 
   /**
+   * Define the font sizes you want to use in your codebase
+   * follows
+   * https://www.fixate.it/blog/make-your-css-variable-names-suck-less
+   */
+  fontSizes: {
+    regular: "14px",
+
+    // sizes order
+    h1: "36px",
+    h2: "32px",
+    h3: "28px",
+    h4: "24px",
+    h5: "20px",
+    h6: "18px",
+
+    // bigger than that
+    giga: "80px",
+    mega: "70px",
+    kilo: "60px",
+
+    // smalle rthan that
+    milli: "14px",
+    micro: "10px",
+    nano: "8px",
+  },
+
+  /**
    * There is no requirement for your naming patterns,
    * but we recommend using a {colorName}-{colorValue} combination.
    *
@@ -85,7 +112,14 @@ export const Theme = {
   },
 };
 
-export type TFontFamily = keyof typeof Theme.fonts.additionals | keyof typeof Theme.fonts.primary | keyof typeof Theme.fonts.secondary;
-export type TFont = "primary" | "secondary" | keyof typeof Theme.fonts.additionals;
+export type TFontFamily =
+  | keyof typeof Theme.fonts.additionals
+  | keyof typeof Theme.fonts.primary
+  | keyof typeof Theme.fonts.secondary;
+export type TFont =
+  | "primary"
+  | "secondary"
+  | keyof typeof Theme.fonts.additionals;
+export type TFontSize = keyof typeof Theme.fontSizes;
 export type TColor = keyof typeof Theme.colors;
 export type TDevice = keyof typeof Theme.deviceSizes;
