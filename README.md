@@ -1,3 +1,5 @@
+![UI Rethought](http://assets.impactstories.co.kr/ui-rethought/ui-rethought-logo.svg)
+
 ## UI Rethought
 
 <center>
