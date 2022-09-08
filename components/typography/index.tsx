@@ -1,6 +1,4 @@
 import { TColor, TFont, TFontSize } from "../../configuration/config";
-import { ISpacingStyleProps } from "../../styled-components/base";
-import { buildFonts } from "../../styled-components/fonts";
 import { ISpacingMixinProps } from "../../styled-components/mixins";
 import { TypographyStyle } from "./typography.style";
 

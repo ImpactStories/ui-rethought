@@ -20,7 +20,7 @@ const Template: ComponentStory<typeof Typography> = (args) => (
 
 export const Primary = Template.bind({});
 Primary.args = {
-  children: <span>My first text</span>,
+  children: <span>This is a blind text.</span>,
   marginTop: "3x",
   tag: "h2"
 };

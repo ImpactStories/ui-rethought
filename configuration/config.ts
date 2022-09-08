@@ -6,7 +6,6 @@
  *
  * Everything will be automatically added to types for the corresponding groups
  */
-
 export const Theme = {
   /**
    * In many components you can interact with width, height, margins, paddings, etc.
@@ -22,6 +21,8 @@ export const Theme = {
    * Define the font sizes you want to use in your codebase
    * follows
    * https://www.fixate.it/blog/make-your-css-variable-names-suck-less
+   * 
+   * But you can follow whatever naming pattern you want
    */
   fontSizes: {
     regular: "14px",
@@ -92,7 +93,6 @@ export const Theme = {
         },
       ],
     },
-
     /**
      * Fonts usually are quite large in width and
      * also designwise it mostly makes sense to use a maximum of two font families
