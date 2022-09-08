@@ -6,4 +6,5 @@ export default create({
   brandUrl: 'https://example.com',
   brandImage: 'http://assets.impactstories.co.kr/ui-rethought/ui-rethought-logo.svg',
   brandTarget: '_self',
+  appBg: "#fff"
 });
