@@ -8,9 +8,9 @@
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
+# build
+/dist
+/.rollup.cache
 
 # production
 /build
@@ -33,4 +33,4 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
+

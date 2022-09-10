@@ -1,5 +1,6 @@
 import { ISpacingStyleProps } from "../../styled-components/base";
 import { ContainerStyle } from "./container.style";
+import React from "react";
 
 interface IContainerComponent extends ISpacingStyleProps {
   children: React.ReactNode;
