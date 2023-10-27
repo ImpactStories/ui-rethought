@@ -1,6 +1,7 @@
 import { TColor, TFont, TFontSize } from "../../configuration/config";
 import { ISpacingMixinProps } from "../../styled-components/mixins";
 import { TypographyStyle } from "./typography.style";
+import React from "react";
 
 type TTypographyComponentTag =
   | "h1"
