@@ -14,8 +14,8 @@ type TTypographyComponentTag =
   | "span"
   | "div";
 
-interface ITypographyComponent extends ISpacingMixinProps {
-  children: React.ReactNode;
+export interface  ITypographyComponent extends ISpacingMixinProps {
+  children: any;
   tag?: TTypographyComponentTag;
   color?: TColor;
   font?: TFont;

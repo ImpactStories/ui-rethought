@@ -1,24 +1,19 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-
-import { Typography } from "./index";
+import { StoryFn, Meta } from "@storybook/react";
+import { ITypographyComponent, Typography } from "./index";
 
 export default {
   title: "Base/Typography",
   component: Typography,
   argTypes: {
   },
-} as ComponentMeta<typeof Typography>;
+} as Meta;
 
-const Template: ComponentStory<typeof Typography> = (args) => (
-  <Typography {...args}>
-    {
-      args.children
-    }
-  </Typography>
+const Template: StoryFn<ITypographyComponent> = (args) => (
+  <Typography {...args} />
 );
 
-export const Primary = Template.bind({});
+export const Primary: StoryFn<ITypographyComponent> = Template.bind({});
 Primary.args = {
   children: <span>This is a blind text.</span>,
   marginTop: "3x",

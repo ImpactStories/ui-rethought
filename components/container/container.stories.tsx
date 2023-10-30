@@ -1,6 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-
+import { StoryFn, Meta } from "@storybook/react";
 import { Container } from "./index";
 
 export default {
@@ -15,9 +14,9 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof Container>;
+} as Meta;
 
-const Template: ComponentStory<typeof Container> = (args) => (
+const Template: StoryFn<typeof Container> = (args) => (
   <Container {...args}>
     {
       args.children
