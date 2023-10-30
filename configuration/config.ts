@@ -25,7 +25,7 @@ export const Theme = {
    * But you can follow whatever naming pattern you want
    */
   fontSizes: {
-    regular: "14px",
+    regular: "16px",
 
     // sizes order
     h1: "36px",
@@ -40,7 +40,7 @@ export const Theme = {
     mega: "70px",
     kilo: "60px",
 
-    // smalle rthan that
+    // smaller than that
     milli: "14px",
     micro: "10px",
     nano: "8px",
@@ -56,6 +56,15 @@ export const Theme = {
     "grey-100": "#eee",
     "grey-200": "#eee",
     "red-100": "#FF0000",
+  },
+
+  buttons: {
+    variants: {
+
+    },
+    sizes: {
+      
+    }
   },
 
   /**

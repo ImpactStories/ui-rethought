@@ -16,4 +16,7 @@ const Template: StoryFn<IButtonComponent> = (args) => (
 export const Primary: StoryFn<IButtonComponent> = Template.bind({});
 Primary.args = {
   children: <span>This is a blind text.</span>,
+  variant: {
+    style: "primary"
+  }
 };
