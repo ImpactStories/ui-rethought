@@ -16,10 +16,14 @@
     "styled-components": "^5.3.5"
   },
   "resolutions": {
-    "styled-components": "^5"
+    "styled-components": "^5",
+    "jackspeak": "2.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.18.13",
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-react": "^7.22.15",
+    "@babel/preset-typescript": "^7.23.2",
     "@rollup/plugin-commonjs": "^22.0.2",
     "@rollup/plugin-node-resolve": "^14.0.1",
     "@rollup/plugin-typescript": "^8.5.0",
