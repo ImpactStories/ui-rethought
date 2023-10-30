@@ -1,5 +1,6 @@
 import React from "react";
 import { StyledButton } from "./button.style";
+import { Icon } from "../icon";
 
 export interface IButtonComponent {
   children: React.ReactNode;
@@ -35,7 +36,7 @@ export interface IButtonComponent {
   };
   // fixed actions
   actions?: {
-    onClick?: () => void;
+    onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
     onMouseEnter?: () => void;
     onMouseLeave?: () => void;
   };
@@ -45,10 +46,20 @@ export const Button: React.FC<IButtonComponent> = ({
   children,
   variant,
   visualDetails,
+  actions
 }) => {
   return (
-    <StyledButton $variant={variant} $visualDetails={visualDetails}>
-      {children}
+    <StyledButton
+      // styles
+      $variant={variant}
+      $visualDetails={visualDetails}
+
+      // actions
+      onClick={actions?.onClick}
+      onMouseEnter={actions?.onMouseEnter}
+      onMouseLeave={actions?.onMouseLeave}
+    >
+      <Icon id="download" /> {children}
     </StyledButton>
   );
 };

@@ -2,7 +2,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import babel from 'rollup-plugin-babel';
-import dts from "rollup-plugin-dts";
+import svg from 'rollup-plugin-svg';
 
 const packageJson = require("./package.json");
 
@@ -19,6 +19,7 @@ export default [
       },
     ],
     plugins: [
+      svg(),
       resolve(),
       typescript({ tsconfig: "./tsconfig.json" }),
       babel({
